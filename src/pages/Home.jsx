@@ -1,38 +1,52 @@
 import { useState, useEffect, useRef } from "react";
+import { FaWhatsapp, FaMapMarkerAlt, FaUserTie, FaGavel, FaStar, FaCheckCircle } from "react-icons/fa";
 import Fondo from "../assets/fondo.jpg";
 // Puedes agregar más imágenes en tu carpeta assets y usarlas aquí
 import ImagenLibertad from "../assets/libertad.jpeg";
 import ImagenCharla from "../assets/charla.jpeg";
 import ImagenDocumento from "../assets/hombre-documento.jpeg";
+import Whatsapp from "../components/Whatsapp";
 
 const testimonios = [
   {
-    texto: "Gracias a su asesoría obtuve mi visa sin complicaciones. ¡Muy recomendados!",
+    texto:
+      "Gracias a su asesoría obtuve mi visa sin complicaciones. ¡Muy recomendados!",
     autor: "María G.",
+    rating: 5,
   },
   {
-    texto: "Me ayudaron a regularizar mi situación en EE.UU. con profesionalismo y empatía.",
+    texto:
+      "Me ayudaron a regularizar mi situación en EE.UU. con profesionalismo y empatía.",
     autor: "Juan P.",
+    rating: 4,
   },
   {
     texto: "Excelente atención y resultados rápidos en mi trámite migratorio.",
     autor: "Carlos L.",
+    rating: 5,
   },
   {
     texto: "El equipo fue muy claro y honesto durante todo el proceso legal.",
     autor: "Ana S.",
+    rating: 4,
   },
   {
-    texto: "¡Recomiendo totalmente sus servicios para cualquier trámite migratorio!",
+    texto:
+      "¡Recomiendo totalmente sus servicios para cualquier trámite migratorio!",
     autor: "Luis F.",
+    rating: 5,
   },
   {
-    texto: "Siempre atentos y resolvieron todas mis dudas sobre mi estatus migratorio.",
+    texto:
+      "Siempre atentos y resolvieron todas mis dudas sobre mi estatus migratorio.",
     autor: "Sofía M.",
+    rating: 5,
   },
   {
-    texto: "Profesionales y confiables, los mejores para trámites legales en EE.UU.",
+    texto:
+      "Profesionales y confiables, los mejores para trámites legales en EE.UU.",
     autor: "Pedro R.",
+    rating: 5,
   },
 ];
 
@@ -40,6 +54,8 @@ function Home() {
   const [index, setIndex] = useState(0);
   const [showTestimonios, setShowTestimonios] = useState(false);
   const testimoniosRef = useRef(null);
+  const whatsappRef = useRef(null);
+  const [showArrow, setShowArrow] = useState(false);
 
   // Carrusel automático de testimonios
   useEffect(() => {
@@ -61,6 +77,18 @@ function Home() {
     return () => observer.disconnect();
   }, []);
 
+  // Detecta si la sección de ubicación está visible
+  useEffect(() => {
+    const observer = new window.IntersectionObserver(
+      ([entry]) => {
+        setShowArrow(entry.isIntersecting);
+      },
+      { threshold: 0.5 }
+    );
+    if (whatsappRef.current) observer.observe(whatsappRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div>
       {/* Hero con imagen de fondo */}
@@ -72,22 +100,29 @@ function Home() {
         />
         <div className="absolute inset-0 bg-[#0A2463]/70"></div>
         <div className="relative z-10 text-center text-white px-4">
-          <h1 className="text-4xl font-bold mb-2">Tu Visa y Trámites Legales en EE.UU.</h1>
-          <p className="text-lg mb-4">
-            Asesoría legal para extranjeros y latinos que buscan definir su situación migratoria.
+          <h1 className="text-4xl font-bold mb-2 flex items-center justify-center gap-2">
+            <FaGavel className="inline text-[#D9A404]" /> Tu Visa y Trámites Legales en EE.UU.
+          </h1>
+          <p className="text-lg mb-4 flex items-center justify-center gap-2">
+            Asesoría legal para extranjeros y latinos que buscan definir su
+            situación migratoria. <FaUserTie className="inline text-[#0A2463]" />
           </p>
           <a
             href="https://wa.me/573187652280?text=Hola,%20quiero%20una%20asesoría%20gratuita"
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-green-500 text-white px-6 py-3 rounded hover:bg-green-600 transition-colors font-bold"
+            className="bg-green-500 text-white px-6 py-3 rounded hover:bg-green-600 transition-colors font-bold flex items-center justify-center gap-2"
           >
-            AGENDA TU CONSULTA GRATIS
+            <FaWhatsapp /> AGENDA TU CONSULTA GRATIS
           </a>
         </div>
         {/* Onda decorativa al final del hero */}
         <div className="absolute left-0 right-0 bottom-0">
-          <svg viewBox="0 0 1440 100" className="w-full h-[60px]" preserveAspectRatio="none">
+          <svg
+            viewBox="0 0 1440 100"
+            className="w-full h-[60px]"
+            preserveAspectRatio="none"
+          >
             <path
               d="M0,0 C480,100 960,0 1440,100 L1440,100 L0,100 Z"
               fill="#fff"
@@ -106,7 +141,9 @@ function Home() {
           />
         </div>
         <div className="md:w-1/2">
-          <h2 className="text-2xl font-bold mb-4 text-[#0A2463]">Servicios para Extranjeros y Latinos</h2>
+          <h2 className="text-2xl font-bold mb-4 text-[#0A2463] flex items-center gap-2">
+            Servicios para Extranjeros y Latinos <FaGavel />
+          </h2>
           <ul className="list-disc pl-5 text-[#0A2463]">
             <li>Visas de trabajo, estudio y reunificación familiar</li>
             <li>Defensa migratoria y regularización</li>
@@ -126,9 +163,12 @@ function Home() {
           />
         </div>
         <div className="md:w-1/2">
-          <h2 className="text-2xl font-bold mb-4 text-[#0A2463]">Atención Personalizada</h2>
+          <h2 className="text-2xl font-bold mb-4 text-[#0A2463] flex items-center gap-2">
+            Atención Personalizada <FaUserTie />
+          </h2>
           <p className="text-[#0A2463]">
-            Nuestro equipo te acompaña en cada paso del proceso legal, resolviendo tus dudas y brindando soluciones efectivas para tu caso.
+            Nuestro equipo te acompaña en cada paso del proceso legal,
+            resolviendo tus dudas y brindando soluciones efectivas para tu caso.
           </p>
         </div>
       </section>
@@ -137,10 +177,14 @@ function Home() {
       <section
         ref={testimoniosRef}
         className={`bg-[#0A2463] text-white py-12 px-4 transition-all duration-1000 ${
-          showTestimonios ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
+          showTestimonios
+            ? "opacity-100 translate-y-0"
+            : "opacity-0 translate-y-10"
         }`}
       >
-        <h2 className="text-2xl font-bold text-center mb-6">Testimonios</h2>
+        <h2 className="text-2xl font-bold text-center mb-6 flex items-center justify-center gap-2">
+          Testimonios <FaStar className="text-yellow-400" />
+        </h2>
         <div className="max-w-3xl mx-auto flex flex-col md:flex-row items-center gap-8">
           {/* Imagen al costado del testimonio */}
           <div className="md:w-1/3 flex justify-center mb-6 md:mb-0">
@@ -154,13 +198,24 @@ function Home() {
           <div className="md:w-2/3 flex flex-col items-center">
             <div className="bg-[#173d7a] rounded-lg p-6 shadow text-center min-h-[120px] flex flex-col justify-center transition-all duration-500 w-full">
               <p className="italic mb-2">"{testimonios[index].texto}"</p>
-              <span className="block mt-2 font-bold">- {testimonios[index].autor}</span>
+              <span className="block mt-2 font-bold flex flex-col items-center gap-1">
+                <span className="flex items-center justify-center gap-2">
+                  - {testimonios[index].autor}
+                  <span className="flex items-center ml-2">
+                    {[...Array(testimonios[index].rating)].map((_, i) => (
+                      <FaStar key={i} className="text-yellow-400" />
+                    ))}
+                  </span>
+                </span>
+              </span>
             </div>
             <div className="flex justify-center mt-2 gap-1">
               {testimonios.map((_, i) => (
                 <span
                   key={i}
-                  className={`inline-block w-2 h-2 rounded-full ${i === index ? "bg-[#D9A404]" : "bg-white/30"}`}
+                  className={`inline-block w-2 h-2 rounded-full ${
+                    i === index ? "bg-[#D9A404]" : "bg-white/30"
+                  }`}
                 ></span>
               ))}
             </div>
@@ -170,8 +225,12 @@ function Home() {
 
       {/* Agenda tu consulta */}
       <section className="bg-[#D9A404] text-[#0A2463] py-10 text-center">
-        <h2 className="text-2xl font-bold mb-4">¿Listo para resolver tu situación legal?</h2>
-        <p className="mb-6">Agenda tu consulta gratuita y recibe asesoría personalizada.</p>
+        <h2 className="text-2xl font-bold mb-4 flex items-center justify-center gap-2">
+          ¿Listo para resolver tu situación legal? <FaCheckCircle className="text-green-600" />
+        </h2>
+        <p className="mb-6">
+          Agenda tu consulta gratuita y recibe asesoría personalizada.
+        </p>
         <a
           href="https://wa.me/573187652280?text=Hola,%20quiero%20agendar%20una%20consulta%20gratuita"
           target="_blank"
@@ -184,9 +243,14 @@ function Home() {
 
       {/* Ubicación y contacto con formulario */}
       <section className="relative py-10 px-4 flex items-center justify-center min-h-[300px]">
-        <div className="w-full max-w-2xl text-center text-black bg-white p-6 rounded-lg shadow-lg">
-          <h2 className="text-xl font-bold mb-2">Ubicación</h2>
-          <p className="mb-4">Atendemos en línea para toda Latinoamérica y presencial en Miami, FL.</p>
+        <div className="w-full max-w-2xl text-center text-black bg-white p-6 rounded-lg shadow-lg relative">
+          <h2 className="text-xl font-bold mb-2 flex items-center justify-center gap-2">
+            Ubicación <FaMapMarkerAlt className="text-red-600" />
+          </h2>
+          <p className="mb-4">
+            Atendemos en línea para toda Latinoamérica y presencial en Miami,
+            FL.
+          </p>
           <div className="flex justify-center mb-4">
             <iframe
               title="Ubicación Miami"
@@ -199,87 +263,85 @@ function Home() {
               referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
           </div>
-          <form className="mt-6 text-left space-y-4 max-w-md mx-auto">
-            <h3 className="text-lg font-bold mb-2 text-center">Contáctanos</h3>
-            <div>
-              <label className="block font-semibold mb-1" htmlFor="nombre">Nombre</label>
-              <input
-                type="text"
-                id="nombre"
-                name="nombre"
-                className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0A2463]"
-                required
-              />
-            </div>
-            <div>
-              <label className="block font-semibold mb-1" htmlFor="email">Correo electrónico</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0A2463]"
-                required
-              />
-            </div>
-            <div>
-              <label className="block font-semibold mb-1" htmlFor="mensaje">Mensaje</label>
-              <textarea
-                id="mensaje"
-                name="mensaje"
-                rows={4}
-                className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0A2463]"
-                required
-              ></textarea>
-            </div>
-            <button
-              type="submit"
-              className="w-full bg-[#0A2463] text-white font-bold py-2 rounded hover:bg-[#173d7a] transition-colors"
+          <div className="mt-6 relative flex justify-center">
+            <span
+              ref={whatsappRef}
+              className="font-bold flex items-center gap-2 relative"
+              style={{ zIndex: 2 }}
             >
-              Enviar mensaje
-            </button>
-          </form>
-          <div className="mt-6">
-            <span className="font-bold">WhatsApp:</span>{" "}
-            <a
-              href="https://wa.me/573187652280"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-green-600 underline"
-            >
-            </a>
+              WhatsApp:{" "}
+              <a
+                href="https://wa.me/573187652280"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-green-600 underline flex items-center gap-1"
+              >
+                <FaWhatsapp />
+              </a>
+            </span>
+            {/* Flecha animada */}
+            {showArrow && (
+              <svg
+                style={{
+                  position: "fixed",
+                  left: "calc(50vw + 120px)", // Ajusta según tu layout
+                  top: "calc(100vh - 250px)", // Ajusta según tu layout
+                  width: "420px",
+                  height: "220px",
+                  pointerEvents: "none",
+                  zIndex: 100,
+                  transition: "opacity 0.8s",
+                  opacity: showArrow ? 1 : 0,
+                }}
+                viewBox="0 0 420 220"
+              >
+                <defs>
+                  <marker
+                    id="arrowhead"
+                    markerWidth="16"
+                    markerHeight="16"
+                    refX="12"
+                    refY="8"
+                    orient="auto"
+                  >
+                    <polygon points="0 0, 16 8, 0 16" fill="#25D366" />
+                  </marker>
+                </defs>
+                <path
+                  d="M10,10 Q300,180 410,210"
+                  stroke="#25D366"
+                  strokeWidth="6"
+                  fill="none"
+                  markerEnd="url(#arrowhead)"
+                  style={{
+                    strokeDasharray: 600,
+                    strokeDashoffset: showArrow ? 0 : 600,
+                    transition: "stroke-dashoffset 1s cubic-bezier(0.4,0,0.2,1)",
+                  }}
+                />
+              </svg>
+            )}
           </div>
         </div>
       </section>
 
       <section className="relative bg-white py-12">
         <div className="absolute left-0 right-0 bottom-0">
-          <svg viewBox="0 0 1440 100" className="w-full h-[60px]" preserveAspectRatio="none">
+          <svg
+            viewBox="0 0 1440 100"
+            className="w-full h-[60px]"
+            preserveAspectRatio="none"
+          >
             <path
               d="M0,0 C480,100 960,0 1440,100 L1440,100 L0,100 Z"
-              fill="#17204a" 
+              fill="#17204a"
             />
           </svg>
         </div>
       </section>
 
       {/* Botón flotante de WhatsApp */}
-      <a
-        href="https://wa.me/573187652280?text=Hola,%20quiero%20una%20asesoría%20gratuita"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="fixed bottom-6 right-6 z-50 bg-green-500 rounded-full shadow-lg p-3 hover:bg-green-600 transition-colors"
-        style={{ boxShadow: "0 4px 16px rgba(0,0,0,0.2)" }}
-        aria-label="WhatsApp"
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="w-8 h-8 text-white"
-          fill="currentColor"
-          viewBox="0 0 24 24"
-        >
-          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.164-.173.198-.347.223-.644.075-.297-.149-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.363.709.306 1.262.489 1.694.625.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.413-.074-.124-.272-.198-.57-.347zm-5.421 7.617h-.001a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.455 4.436-9.89 9.893-9.89 2.64 0 5.122 1.029 6.988 2.896a9.825 9.825 0 012.893 6.994c-.003 5.455-4.438 9.89-9.894 9.89zm8.413-18.306A11.815 11.815 0 0012.05 0C5.495 0 .06 5.435.058 12.086c0 2.13.557 4.21 1.615 6.032L.057 24l6.084-1.627a11.888 11.888 0 005.939 1.522h.005c6.554 0 11.89-5.435 11.893-12.086a11.82 11.82 0 00-3.493-8.414z" />
-        </svg>
-      </a>
+      <Whatsapp></Whatsapp>
     </div>
   );
 }
