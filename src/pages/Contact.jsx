@@ -1,4 +1,5 @@
 import Fondo from "../assets/fondo.jpg";
+import Ondas from "../components/Ondas";
 import Whatsapp from "../components/Whatsapp";
 
 function Contact() {
@@ -27,11 +28,56 @@ function Contact() {
       <div style={{ position: "relative", zIndex: 2 }}>
         <section className="relative py-10 px-4 flex items-center justify-center min-h-[300px]">
           <div className="w-full mt-11 max-w-2xl text-center text-black bg-white p-6 rounded-lg shadow-lg bg-opacity-90">
-            <h2 className="text-xl font-bold mb-2">Ubicación</h2>
+            <h2 className="text-2xl font-bold mb-2 text-[#0A2463]">Contáctanos</h2>
             <p className="mb-4">
-              Atendemos en línea para toda Latinoamérica y presencial en Miami,
-              FL.
+              Atendemos en línea para toda Latinoamérica y presencial en Miami, FL.
             </p>
+            {/* Información de contacto mejorada */}
+            <div className="mb-6 flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex-1 bg-[#F3F6FB] rounded-lg shadow p-4 border-l-4 border-[#0A2463]">
+                <div className="flex items-center mb-2">
+                  <span className="text-[#0A2463] text-xl mr-2">📞</span>
+                  <span className="font-bold">Tel. México:</span>
+                  <a href="tel:+525512345678" className="ml-2 text-[#0A2463] underline">+52 55 1234 5678</a>
+                </div>
+                <div className="flex items-center mb-2">
+                  <span className="text-[#0A2463] text-xl mr-2">📱</span>
+                  <span className="font-bold">Tel. EE.UU.:</span>
+                  <a href="tel:+13051234567" className="ml-2 text-[#0A2463] underline">+1 305 123 4567</a>
+                </div>
+                <div className="flex items-center mb-2">
+                  <span className="text-green-600 text-xl mr-2">💬</span>
+                  <span className="font-bold">WhatsApp:</span>
+                  <a href="https://wa.me/573187652280" target="_blank" rel="noopener noreferrer" className="ml-2 text-green-600 underline">+57 318 765 2280</a>
+                </div>
+                <div className="flex items-center">
+                  <span className="text-[#0A2463] text-xl mr-2">✉️</span>
+                  <span className="font-bold">Correo:</span>
+                  <a href="mailto:info@legalidadsinfronteras.mx" className="ml-2 text-[#0A2463] underline">info@legalidadsinfronteras.com</a>
+                </div>
+              </div>
+              {/* Horario tipo tarjeta */}
+              <div className="flex-1 bg-[#D9A404] bg-opacity-90 rounded-lg shadow p-4 text-white">
+                <div className="font-bold text-lg mb-2 flex items-center gap-2">
+                  <span>🕒</span> Horarios de atención
+                </div>
+                <div className="space-y-1">
+                  <div className="flex justify-between border-b border-[#fff7] pb-1">
+                    <span>Lunes a Viernes</span>
+                    <span>09:00 – 18:00</span>
+                  </div>
+                  <div className="flex justify-between border-b border-[#fff7] pb-1">
+                    <span>Sábado</span>
+                    <span>09:00 – 13:00</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="italic">Emergencias</span>
+                    <span className="italic">24/7 WhatsApp</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            {/* Mapa interactivo */}
             <div className="flex justify-center mb-4">
               <iframe
                 title="Ubicación Miami"
@@ -44,8 +90,9 @@ function Contact() {
                 referrerPolicy="no-referrer-when-downgrade"
               ></iframe>
             </div>
+            {/* Formulario de contacto */}
             <form className="mt-6 text-left space-y-4 max-w-md mx-auto">
-              <h3 className="text-lg font-bold mb-2 text-center">Contáctanos</h3>
+              <h3 className="text-lg font-bold mb-2 text-center">Formulario de Contacto</h3>
               <div>
                 <label className="block font-semibold mb-1" htmlFor="nombre">
                   Nombre
@@ -59,16 +106,35 @@ function Contact() {
                 />
               </div>
               <div>
-                <label className="block font-semibold mb-1" htmlFor="email">
-                  Correo electrónico
+                <label className="block font-semibold mb-1" htmlFor="telefono">
+                  Teléfono
                 </label>
                 <input
-                  type="email"
-                  id="email"
-                  name="email"
+                  type="tel"
+                  id="telefono"
+                  name="telefono"
                   className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0A2463]"
                   required
                 />
+              </div>
+              <div>
+                <label className="block font-semibold mb-1" htmlFor="tipo">
+                  Tipo de caso
+                </label>
+                <select
+                  id="tipo"
+                  name="tipo"
+                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0A2463]"
+                  required
+                >
+                  <option value="">Selecciona una opción</option>
+                  <option value="residencia">Residencia Permanente</option>
+                  <option value="asilo">Asilo Político</option>
+                  <option value="visa-u">Visa U</option>
+                  <option value="daca">DACA</option>
+                  <option value="perdon">Perdón Provisional</option>
+                  <option value="otros">Otros</option>
+                </select>
               </div>
               <div>
                 <label className="block font-semibold mb-1" htmlFor="mensaje">
@@ -89,33 +155,13 @@ function Contact() {
                 Enviar mensaje
               </button>
             </form>
-            <div className="mt-6">
-              <span className="font-bold">WhatsApp:</span>{" "}
-              <a
-                href="https://wa.me/573187652280"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-green-600 underline"
-              ></a>
+            {/* Política de consultas */}
+            <div className="mt-6 text-sm text-gray-700 bg-[#F3F6FB] p-4 rounded-lg border-l-4 border-[#0A2463]">
+              <strong>Política de consultas:</strong> La primera consulta es gratuita y sin compromiso. Nuestro equipo evaluará tu caso y te orientará sobre los siguientes pasos. Para emergencias, contáctanos por WhatsApp las 24 horas.
             </div>
           </div>
         </section>
-
-        <section className="relative bg-white py-12">
-          <div className="absolute left-0 right-0 bottom-0">
-            <svg
-              viewBox="0 0 1440 100"
-              className="w-full h-[60px]"
-              preserveAspectRatio="none"
-            >
-              <path
-                d="M0,0 C480,100 960,0 1440,100 L1440,100 L0,100 Z"
-                fill="#17204a"
-              />
-            </svg>
-          </div>
-        </section>
-
+        <Ondas></Ondas>
         <Whatsapp></Whatsapp>
       </div>
     </div>

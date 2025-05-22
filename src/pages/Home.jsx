@@ -6,6 +6,7 @@ import ImagenLibertad from "../assets/libertad.jpeg";
 import ImagenCharla from "../assets/charla.jpeg";
 import ImagenDocumento from "../assets/hombre-documento.jpeg";
 import Whatsapp from "../components/Whatsapp";
+import Ondas from "../components/Ondas";
 
 const testimonios = [
   {
@@ -279,67 +280,11 @@ function Home() {
                 <FaWhatsapp />
               </a>
             </span>
-            {/* Flecha animada */}
-            {showArrow && (
-              <svg
-                style={{
-                  position: "fixed",
-                  left: "calc(50vw + 120px)", // Ajusta según tu layout
-                  top: "calc(100vh - 250px)", // Ajusta según tu layout
-                  width: "420px",
-                  height: "220px",
-                  pointerEvents: "none",
-                  zIndex: 100,
-                  transition: "opacity 0.8s",
-                  opacity: showArrow ? 1 : 0,
-                }}
-                viewBox="0 0 420 220"
-              >
-                <defs>
-                  <marker
-                    id="arrowhead"
-                    markerWidth="16"
-                    markerHeight="16"
-                    refX="12"
-                    refY="8"
-                    orient="auto"
-                  >
-                    <polygon points="0 0, 16 8, 0 16" fill="#25D366" />
-                  </marker>
-                </defs>
-                <path
-                  d="M10,10 Q300,180 410,210"
-                  stroke="#25D366"
-                  strokeWidth="6"
-                  fill="none"
-                  markerEnd="url(#arrowhead)"
-                  style={{
-                    strokeDasharray: 600,
-                    strokeDashoffset: showArrow ? 0 : 600,
-                    transition: "stroke-dashoffset 1s cubic-bezier(0.4,0,0.2,1)",
-                  }}
-                />
-              </svg>
-            )}
+            {/* Flecha animada eliminada */}
           </div>
         </div>
       </section>
-
-      <section className="relative bg-white py-12">
-        <div className="absolute left-0 right-0 bottom-0">
-          <svg
-            viewBox="0 0 1440 100"
-            className="w-full h-[60px]"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M0,0 C480,100 960,0 1440,100 L1440,100 L0,100 Z"
-              fill="#17204a"
-            />
-          </svg>
-        </div>
-      </section>
-
+      <Ondas></Ondas>
       {/* Botón flotante de WhatsApp */}
       <Whatsapp></Whatsapp>
     </div>
