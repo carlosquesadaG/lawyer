@@ -9,29 +9,30 @@ function Contact() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.sendForm(
-      "service_nyeliwh",      // Reemplaza con tu Service ID de EmailJS
-      "template_tgubc2l",     // Reemplaza con tu Template ID de EmailJS
-      e.target,
-      "wAObukb5kTuV-o1cJ"       // Reemplaza con tu Public Key de EmailJS
-    )
-    .then(() => {
-      Swal.fire({
-        icon: "success",
-        title: "¡Mensaje enviado!",
-        text: "Gracias por contactarnos. Pronto nos pondremos en contacto contigo.",
-        confirmButtonColor: "#0A2463"
+    emailjs
+      .sendForm(
+        "service_nyeliwh", // Reemplaza con tu Service ID de EmailJS
+        "template_tgubc2l", // Reemplaza con tu Template ID de EmailJS
+        e.target,
+        "wAObukb5kTuV-o1cJ" // Reemplaza con tu Public Key de EmailJS
+      )
+      .then(() => {
+        Swal.fire({
+          icon: "success",
+          title: "¡Mensaje enviado!",
+          text: "Gracias por contactarnos. Pronto nos pondremos en contacto contigo.",
+          confirmButtonColor: "#0A2463",
+        });
+        e.target.reset();
+      })
+      .catch(() => {
+        Swal.fire({
+          icon: "error",
+          title: "Error",
+          text: "No se pudo enviar el mensaje. Intenta de nuevo más tarde.",
+          confirmButtonColor: "#0A2463",
+        });
       });
-      e.target.reset();
-    })
-    .catch(() => {
-      Swal.fire({
-        icon: "error",
-        title: "Error",
-        text: "No se pudo enviar el mensaje. Intenta de nuevo más tarde.",
-        confirmButtonColor: "#0A2463"
-      });
-    });
   };
 
   return (
@@ -59,9 +60,12 @@ function Contact() {
       <div style={{ position: "relative", zIndex: 2 }}>
         <section className="relative py-10 px-4 flex items-center justify-center min-h-[300px]">
           <div className="w-full mt-11 max-w-2xl text-center text-black bg-white p-6 rounded-lg shadow-lg bg-opacity-90">
-            <h2 className="text-2xl font-bold mb-2 text-[#0A2463]">Contáctanos</h2>
+            <h2 className="text-2xl font-bold mb-2 text-[#0A2463]">
+              Contáctanos
+            </h2>
             <p className="mb-4">
-              Atendemos en línea para toda Latinoamérica y presencial en Miami, FL.
+              Atendemos en línea para toda Latinoamérica y presencial en Miami,
+              FL.
             </p>
             {/* Información de contacto mejorada */}
             <div className="mb-6 flex flex-col sm:flex-row gap-4 justify-center">
@@ -69,22 +73,44 @@ function Contact() {
                 <div className="flex items-center mb-2">
                   <span className="text-[#0A2463] text-xl mr-2">📞</span>
                   <span className="font-bold">Tel. México:</span>
-                  <a href="tel:+525512345678" className="ml-2 text-[#0A2463] underline">+52 55 1234 5678</a>
+                  <a
+                    href="tel:+525512345678"
+                    className="ml-2 text-[#0A2463] underline"
+                  >
+                    +52 55 1234 5678
+                  </a>
                 </div>
                 <div className="flex items-center mb-2">
                   <span className="text-[#0A2463] text-xl mr-2">📱</span>
                   <span className="font-bold">Tel. EE.UU.:</span>
-                  <a href="tel:+13051234567" className="ml-2 text-[#0A2463] underline">+1 305 123 4567</a>
+                  <a
+                    href="tel:+13051234567"
+                    className="ml-2 text-[#0A2463] underline"
+                  >
+                    +1 305 123 4567
+                  </a>
                 </div>
                 <div className="flex items-center mb-2">
                   <span className="text-green-600 text-xl mr-2">💬</span>
                   <span className="font-bold">WhatsApp:</span>
-                  <a href="https://wa.me/573187652280" target="_blank" rel="noopener noreferrer" className="ml-2 text-green-600 underline">+57 318 765 2280</a>
+                  <a
+                    href="https://wa.me/573187652280"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="ml-2 text-green-600 underline"
+                  >
+                    +57 318 765 2280
+                  </a>
                 </div>
                 <div className="flex items-center">
                   <span className="text-[#0A2463] text-xl mr-2">✉️</span>
                   <span className="font-bold">Correo:</span>
-                  <a href="mailto:info@legalidadsinfronteras.mx" className="ml-2 text-[#0A2463] underline">info@legalidadsinfronteras.com</a>
+                  <a
+                    href="mailto:info@legalidadsinfronteras.mx"
+                    className="ml-2 text-[#0A2463] underline"
+                  >
+                    info@legalidadsinfronteras.com
+                  </a>
                 </div>
               </div>
               {/* Horario tipo tarjeta */}
@@ -122,8 +148,13 @@ function Contact() {
               ></iframe>
             </div>
             {/* Formulario de contacto */}
-            <form className="mt-6 text-left space-y-4 max-w-md mx-auto" onSubmit={handleSubmit}>
-              <h3 className="text-lg font-bold mb-2 text-center">Formulario de Contacto</h3>
+            <form
+              className="mt-6 text-left space-y-4 max-w-md mx-auto"
+              onSubmit={handleSubmit}
+            >
+              <h3 className="text-lg font-bold mb-2 text-center">
+                Formulario de Contacto
+              </h3>
               <div>
                 <label className="block font-semibold mb-1" htmlFor="nombre">
                   Nombre
@@ -160,6 +191,7 @@ function Contact() {
                 >
                   <option value="">Selecciona una opción</option>
                   <option value="residencia">Residencia Permanente</option>
+                  <option value="green-card">Green Card</option>
                   <option value="asilo">Asilo Político</option>
                   <option value="visa-u">Visa U</option>
                   <option value="daca">DACA</option>
@@ -188,7 +220,10 @@ function Contact() {
             </form>
             {/* Política de consultas */}
             <div className="mt-6 text-sm text-gray-700 bg-[#F3F6FB] p-4 rounded-lg border-l-4 border-[#0A2463]">
-              <strong>Política de consultas:</strong> La primera consulta es gratuita y sin compromiso. Nuestro equipo evaluará tu caso y te orientará sobre los siguientes pasos. Para emergencias, contáctanos por WhatsApp las 24 horas.
+              <strong>Política de consultas:</strong> La primera consulta es
+              gratuita y sin compromiso. Nuestro equipo evaluará tu caso y te
+              orientará sobre los siguientes pasos. Para emergencias,
+              contáctanos por WhatsApp las 24 horas.
             </div>
           </div>
         </section>
