@@ -119,7 +119,7 @@ function Home() {
             rel="noopener noreferrer"
             className="bg-green-500 text-white px-6 py-3 rounded hover:bg-green-600 transition-colors font-bold flex items-center justify-center gap-2"
           >
-            <FaWhatsapp /> AGENDA TU CONSULTA GRATIS
+            <FaWhatsapp /> AGENDA TU CONSULTA GRATIS test
           </a>
         </div>
         {/* Onda decorativa al final del hero */}
