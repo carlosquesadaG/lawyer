@@ -1,8 +1,39 @@
 import Fondo from "../assets/fondo.jpg";
 import Ondas from "../components/Ondas";
 import Whatsapp from "../components/Whatsapp";
+import Swal from "sweetalert2"; // <-- Agrega esta línea
+import emailjs from "emailjs-com";
 
 function Contact() {
+  // Nueva función para manejar el envío del formulario
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm(
+      "service_nyeliwh",      // Reemplaza con tu Service ID de EmailJS
+      "template_tgubc2l",     // Reemplaza con tu Template ID de EmailJS
+      e.target,
+      "wAObukb5kTuV-o1cJ"       // Reemplaza con tu Public Key de EmailJS
+    )
+    .then(() => {
+      Swal.fire({
+        icon: "success",
+        title: "¡Mensaje enviado!",
+        text: "Gracias por contactarnos. Pronto nos pondremos en contacto contigo.",
+        confirmButtonColor: "#0A2463"
+      });
+      e.target.reset();
+    })
+    .catch(() => {
+      Swal.fire({
+        icon: "error",
+        title: "Error",
+        text: "No se pudo enviar el mensaje. Intenta de nuevo más tarde.",
+        confirmButtonColor: "#0A2463"
+      });
+    });
+  };
+
   return (
     <div
       style={{
@@ -91,7 +122,7 @@ function Contact() {
               ></iframe>
             </div>
             {/* Formulario de contacto */}
-            <form className="mt-6 text-left space-y-4 max-w-md mx-auto">
+            <form className="mt-6 text-left space-y-4 max-w-md mx-auto" onSubmit={handleSubmit}>
               <h3 className="text-lg font-bold mb-2 text-center">Formulario de Contacto</h3>
               <div>
                 <label className="block font-semibold mb-1" htmlFor="nombre">

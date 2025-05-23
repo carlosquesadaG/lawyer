@@ -1,5 +1,12 @@
 import { useState, useEffect, useRef } from "react";
-import { FaWhatsapp, FaMapMarkerAlt, FaUserTie, FaGavel, FaStar, FaCheckCircle } from "react-icons/fa";
+import {
+  FaWhatsapp,
+  FaMapMarkerAlt,
+  FaUserTie,
+  FaGavel,
+  FaStar,
+  FaCheckCircle,
+} from "react-icons/fa";
 import Fondo from "../assets/fondo.jpg";
 // Puedes agregar más imágenes en tu carpeta assets y usarlas aquí
 import ImagenLibertad from "../assets/libertad.jpeg";
@@ -56,7 +63,6 @@ function Home() {
   const [showTestimonios, setShowTestimonios] = useState(false);
   const testimoniosRef = useRef(null);
   const whatsappRef = useRef(null);
-  const [showArrow, setShowArrow] = useState(false);
 
   // Carrusel automático de testimonios
   useEffect(() => {
@@ -80,12 +86,9 @@ function Home() {
 
   // Detecta si la sección de ubicación está visible
   useEffect(() => {
-    const observer = new window.IntersectionObserver(
-      ([entry]) => {
-        setShowArrow(entry.isIntersecting);
-      },
-      { threshold: 0.5 }
-    );
+    const observer = new window.IntersectionObserver(([entry]) => {}, {
+      threshold: 0.5,
+    });
     if (whatsappRef.current) observer.observe(whatsappRef.current);
     return () => observer.disconnect();
   }, []);
@@ -102,11 +105,13 @@ function Home() {
         <div className="absolute inset-0 bg-[#0A2463]/70"></div>
         <div className="relative z-10 text-center text-white px-4">
           <h1 className="text-4xl font-bold mb-2 flex items-center justify-center gap-2">
-            <FaGavel className="inline text-[#D9A404]" /> Tu Visa y Trámites Legales en EE.UU.
+            <FaGavel className="inline text-[#D9A404]" /> Tu Visa y Trámites
+            Legales en EE.UU.
           </h1>
           <p className="text-lg mb-4 flex items-center justify-center gap-2">
             Asesoría legal para extranjeros y latinos que buscan definir su
-            situación migratoria. PRUEBAA <FaUserTie className="inline text-[#0A2463]" />
+            situación migratoria.{" "}
+            <FaUserTie className="inline text-[#0A2463]" />
           </p>
           <a
             href="https://wa.me/573187652280?text=Hola,%20quiero%20una%20asesoría%20gratuita"
@@ -227,7 +232,8 @@ function Home() {
       {/* Agenda tu consulta */}
       <section className="bg-[#D9A404] text-[#0A2463] py-10 text-center">
         <h2 className="text-2xl font-bold mb-4 flex items-center justify-center gap-2">
-          ¿Listo para resolver tu situación legal? <FaCheckCircle className="text-green-600" />
+          ¿Listo para resolver tu situación legal?{" "}
+          <FaCheckCircle className="text-green-600" />
         </h2>
         <p className="mb-6">
           Agenda tu consulta gratuita y recibe asesoría personalizada.
