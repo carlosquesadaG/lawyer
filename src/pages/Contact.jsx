@@ -180,6 +180,18 @@ function Contact() {
                 />
               </div>
               <div>
+                <label className="block font-semibold mb-1" htmlFor="email">
+                  Correo electrónico
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  className="w-full border border-gray-300 rounded px-3 py-2 focus:outline-none focus:ring-2 focus:ring-[#0A2463]"
+                  // No required
+                />
+              </div>
+              <div>
                 <label className="block font-semibold mb-1" htmlFor="tipo">
                   Tipo de caso
                 </label>
