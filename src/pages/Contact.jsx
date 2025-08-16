@@ -99,7 +99,7 @@ function Contact() {
                     rel="noopener noreferrer"
                     className="ml-2 text-green-600 underline"
                   >
-                    +57 318 765 2280
+                    +1 305 123 4567
                   </a>
                 </div>
                 <div className="flex items-center">
@@ -109,7 +109,7 @@ function Contact() {
                     href="mailto:info@legalidadsinfronteras.mx"
                     className="ml-2 text-[#0A2463] underline"
                   >
-                    info@legalidadsinfronteras.com
+                    contacto@legalidadsinfronteras.mx
                   </a>
                 </div>
               </div>
