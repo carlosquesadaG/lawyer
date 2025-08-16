@@ -1,7 +1,7 @@
 import Fondo from "../assets/fondo.jpg";
 import Ondas from "../components/Ondas";
 import Whatsapp from "../components/Whatsapp";
-import Swal from "sweetalert2"; // <-- Agrega esta línea
+import Swal from "sweetalert2"; 
 import emailjs from "emailjs-com";
 
 function Contact() {
@@ -11,10 +11,10 @@ function Contact() {
 
     emailjs
       .sendForm(
-        "service_nyeliwh", // Reemplaza con tu Service ID de EmailJS
-        "template_tgubc2l", // Reemplaza con tu Template ID de EmailJS
+        "service_hzz13jn", // Reemplaza con tu Service ID de EmailJS
+        "template_pu4qnvl", // Reemplaza con tu Template ID de EmailJS
         e.target,
-        "wAObukb5kTuV-o1cJ" // Reemplaza con tu Public Key de EmailJS
+        "wAObukb5kTuV-crimOIvL6IFKzcFqQ" // Reemplaza con tu Public Key de EmailJS
       )
       .then(() => {
         Swal.fire({
