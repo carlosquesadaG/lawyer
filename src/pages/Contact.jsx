@@ -74,32 +74,32 @@ function Contact() {
                   <span className="text-[#0A2463] text-xl mr-2">📞</span>
                   <span className="font-bold">Tel. México:</span>
                   <a
-                    href="tel:+525512345678"
+                    href="tel:+12269165794"
                     className="ml-2 text-[#0A2463] underline"
                   >
-                    +52 55 1234 5678
+                    +1 226 916 5794
                   </a>
                 </div>
                 <div className="flex items-center mb-2">
                   <span className="text-[#0A2463] text-xl mr-2">📱</span>
                   <span className="font-bold">Tel. EE.UU.:</span>
                   <a
-                    href="tel:+13051234567"
+                    href="tel:+12269165794"
                     className="ml-2 text-[#0A2463] underline"
                   >
-                    +1 305 123 4567
+                    +1 226 916 5794
                   </a>
                 </div>
                 <div className="flex items-center mb-2">
                   <span className="text-green-600 text-xl mr-2">💬</span>
                   <span className="font-bold">WhatsApp:</span>
                   <a
-                    href="https://wa.me/573187652280"
+                    href="https://wa.me/12269165794?text=Hola,%20quiero%20más%20información"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="ml-2 text-green-600 underline"
                   >
-                    +1 305 123 4567
+                    +1 226 916 5794
                   </a>
                 </div>
                 <div className="flex items-center">

@@ -44,7 +44,7 @@ function Services() {
           <h2 className="text-xl font-bold mb-2 text-[#0A2463]">Residencia Permanente</h2>
           <p className="text-gray-700 mb-4 text-center">Obtén tu Green Card y asegura tu futuro en EE.UU. Te guiamos en cada paso del proceso.</p>
           <a
-            href="https://wa.me/521XXXXXXXXXX"
+            href="https://wa.me/12269165794"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-auto bg-[#D9A404] text-white px-4 py-2 rounded hover:bg-[#b88a03] transition"
@@ -58,7 +58,7 @@ function Services() {
           <h2 className="text-xl font-bold mb-2 text-[#0A2463]">Asilo Político</h2>
           <p className="text-gray-700 mb-4 text-center">Protección para quienes enfrentan persecución. Conoce requisitos, proceso y beneficios.</p>
           <a
-            href="https://wa.me/521XXXXXXXXXX"
+            href="https://wa.me/12269165794"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-auto bg-[#D9A404] text-white px-4 py-2 rounded hover:bg-[#b88a03] transition"
@@ -72,7 +72,7 @@ function Services() {
           <h2 className="text-xl font-bold mb-2 text-[#0A2463]">Visa U para Víctimas</h2>
           <p className="text-gray-700 mb-4 text-center">Apoyo a víctimas de delitos. Descubre el proceso, beneficios y cómo proteger a tu familia.</p>
           <a
-            href="https://wa.me/521XXXXXXXXXX"
+            href="https://wa.me/12269165794"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-auto bg-[#D9A404] text-white px-4 py-2 rounded hover:bg-[#b88a03] transition"
@@ -86,7 +86,7 @@ function Services() {
           <h2 className="text-xl font-bold mb-2 text-[#0A2463]">DACA</h2>
           <p className="text-gray-700 mb-4 text-center">Información actualizada sobre Acción Diferida, requisitos y proceso de renovación.</p>
           <a
-            href="https://wa.me/521XXXXXXXXXX"
+            href="https://wa.me/12269165794"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-auto bg-[#D9A404] text-white px-4 py-2 rounded hover:bg-[#b88a03] transition"
@@ -100,7 +100,7 @@ function Services() {
           <h2 className="text-xl font-bold mb-2 text-[#0A2463]">Perdón Provisional (I-601A)</h2>
           <p className="text-gray-700 mb-4 text-center">Conoce el proceso, criterios y alternativas para regularizar tu situación migratoria.</p>
           <a
-            href="https://wa.me/521XXXXXXXXXX"
+            href="https://wa.me/12269165794"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-auto bg-[#D9A404] text-white px-4 py-2 rounded hover:bg-[#b88a03] transition"
@@ -121,7 +121,7 @@ function Services() {
             <li>Defensas contra la deportación</li>
           </ul>
           <a
-            href="https://wa.me/521XXXXXXXXXX"
+            href="https://wa.me/12269165794"
             target="_blank"
             rel="noopener noreferrer"
             className="mt-auto bg-[#D9A404] text-white px-4 py-2 rounded hover:bg-[#b88a03] transition"

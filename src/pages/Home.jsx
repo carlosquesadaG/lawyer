@@ -114,7 +114,7 @@ function Home() {
             <FaUserTie className="inline text-[#0A2463]" />
           </p>
           <a
-            href="https://wa.me/573187652280?text=Hola,%20quiero%20una%20asesoría%20gratuita"
+            href="https://wa.me/12269165794?text=Hola,%20quiero%20una%20asesoría%20gratuita"
             target="_blank"
             rel="noopener noreferrer"
             className="bg-green-500 text-white px-6 py-3 rounded hover:bg-green-600 transition-colors font-bold flex items-center justify-center gap-2"
@@ -239,7 +239,7 @@ function Home() {
           Agenda tu consulta gratuita y recibe asesoría personalizada.
         </p>
         <a
-          href="https://wa.me/573187652280?text=Hola,%20quiero%20agendar%20una%20consulta%20gratuita"
+          href="https://wa.me/12269165794?text=Hola,%20quiero%20agendar%20una%20consulta%20gratuita"
           target="_blank"
           rel="noopener noreferrer"
           className="bg-green-600 text-white px-6 py-3 rounded hover:bg-green-700 transition-colors font-bold"
