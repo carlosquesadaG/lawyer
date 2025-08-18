@@ -2,7 +2,7 @@ function Whatsapp() {
   return (
     <div>
       <a
-        href="https://wa.me/573187652280?text=Hola,%20quiero%20una%20asesoría%20gratuita"
+        href="https://wa.me/12269165794?text=Hola,%20quiero%20una%20asesoría%20gratuita"
         target="_blank"
         rel="noopener noreferrer"
         className="fixed bottom-6 right-6 z-50 bg-green-500 rounded-full shadow-lg p-3 hover:bg-green-600 transition-colors"

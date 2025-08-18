@@ -19,7 +19,7 @@ export function Footer() {
         </div>
         <div className="flex justify-center space-x-4 mt-4">
           <a
-            href="https://wa.me/5210000000000"
+            href="https://wa.me/12269165794?text=Hola,%20quiero%20una%20asesoría%20gratuita"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:text-green-400"
